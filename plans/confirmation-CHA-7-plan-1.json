@@ -1,0 +1,29 @@
+{
+  "kind": "request_confirmation",
+  "issueIdentifier": "CHA-7",
+  "idempotencyKey": "confirmation:CHA-7:plan:1",
+  "continuationPolicy": "wake_assignee",
+  "targetDocument": "Q2-STRATEGY.md",
+  "planRevision": 1,
+  "title": "Утвердить стратегию ChannelPulse Q2 (rev.1)",
+  "summary": "North Star: первый платящий клиент Growth за 30 дней. Четыре недельные вехи (Pipeline → Conversations → Pilot → Revenue). После approval CEO создаст child issues CMO/CTO/UX.",
+  "acceptLabel": "Утвердить rev.1",
+  "rejectLabel": "Запросить правки",
+  "apiPayload": {
+    "method": "POST",
+    "path": "/api/issues/{issueId}/interactions",
+    "body": {
+      "kind": "request_confirmation",
+      "idempotencyKey": "confirmation:CHA-7:plan:1",
+      "continuationPolicy": "wake_assignee",
+      "confirmation": {
+        "title": "Утвердить стратегию ChannelPulse Q2 (rev.1)",
+        "message": "См. Q2-STRATEGY.md rev.1 и plans/paperclip-child-issues-CHA-7.json. После принятия — автоматическое создание подзадач CMO, CTO, UXDesigner.",
+        "acceptLabel": "Утвердить",
+        "rejectLabel": "Правки"
+      }
+    }
+  },
+  "status": "pending_api",
+  "note": "Создать interaction когда Paperclip API доступен (127.0.0.1:3100). До этого — approval через комментарий board в issue CHA-7."
+}

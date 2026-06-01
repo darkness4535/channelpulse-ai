@@ -1,9 +1,12 @@
 {
   "parentIssue": "CHA-7",
-  "parentId": "use PAPERCLIP_TASK_ID when API available",
+  "parentId": "${PAPERCLIP_TASK_ID}",
   "planRevision": 1,
   "createdAt": "2026-06-01T16:30:00Z",
-  "note": "Создать через POST /api/issues с parentId текущей задачи после approval плана",
+  "updatedAt": "2026-06-01T15:37:00Z",
+  "status": "pending_plan_approval",
+  "apiStatus": "unavailable_127.0.0.1:3100",
+  "note": "Создать через POST /api/issues с parentId после acceptance confirmation:CHA-7:plan:1. Спека confirmation: plans/confirmation-CHA-7-plan-1.json",
   "children": [
     {
       "identifier": "CHA-7-CMO",

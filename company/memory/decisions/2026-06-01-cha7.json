@@ -36,6 +36,12 @@
         "unblock_owner": "board",
         "unblock_action": "Поднять Paperclip API для cloud-агентов или создать child issues вручную из plans/paperclip-child-issues-CHA-7.json и подтвердить Q2-STRATEGY.md rev.1"
       }
+    },
+    {
+      "id": "cha7-in-review-2026-06-01",
+      "summary": "CHA-7 переведён в in_review: стратегия rev.1 готова, ждём board approval",
+      "rationale": "Критерии 1–2 выполнены; критерии 3–5 заблокированы до confirmation и API. PR cursor/cha7-q2-strategy-ffe5.",
+      "owner": "director"
     }
   ]
 }
