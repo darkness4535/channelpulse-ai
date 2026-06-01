@@ -1,0 +1,20 @@
+{
+  "client_id": "demo_coffee_01",
+  "week_start": "2026-05-28",
+  "positioning": "Локальная кофейня с живой командой и дегустациями — TG как дневник вкуса и событий.",
+  "rubrics": [
+    { "id": "behind", "name": "Закулисье", "frequency": "2x/week" },
+    { "id": "taste", "name": "Вкус недели", "frequency": "2x/week" },
+    { "id": "event", "name": "События", "frequency": "1x/week" },
+    { "id": "cta", "name": "Запись / предзаказ", "frequency": "1x/week" }
+  ],
+  "days": [
+    { "date": "2026-05-28", "rubric": "behind", "topic": "Обжарка утренней партии" },
+    { "date": "2026-05-29", "rubric": "taste", "topic": "Эфиопия Yirgacheffe — ноты" },
+    { "date": "2026-05-30", "rubric": "event", "topic": "Дегустация в субботу" },
+    { "date": "2026-05-31", "rubric": "behind", "topic": "Бариста недели: Маша" },
+    { "date": "2026-06-01", "rubric": "taste", "topic": "Как выбрать зерно домой" },
+    { "date": "2026-06-02", "rubric": "cta", "topic": "Предзаказ выпечки" },
+    { "date": "2026-06-03", "rubric": "event", "topic": "Итоги дегустации + фото" }
+  ]
+}

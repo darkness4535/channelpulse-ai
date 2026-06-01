@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-31",
+  "source": "mock",
+  "leads": [
+    {
+      "name": "Кофейня «Зерно»",
+      "niche": "local_food",
+      "telegram": "@zereno_demo",
+      "score": 8,
+      "why": "Редкие посты, активны в VK"
+    },
+    {
+      "name": "Салон «Блеск»",
+      "niche": "beauty_wellness",
+      "site": "https://example.com/blesk",
+      "score": 7,
+      "why": "Нет Telegram-канала"
+    }
+  ]
+}

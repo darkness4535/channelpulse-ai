@@ -1,0 +1,92 @@
+company:
+  name: ChannelPulse AI
+  tagline: "Telegram-каналы, которые продают — без найма SMM-отдела"
+  locale: ru-RU
+  timezone: Europe/Moscow
+
+niche:
+  id: telegram_smm_smb
+  description: >
+    Ведение и рост Telegram-каналов для малого бизнеса
+    (кофейни, салоны, клиники, локальные сервисы, B2B-услуги).
+
+ideal_customer:
+  signals:
+    - "Есть бизнес, мало или нет постоянного контента в TG"
+    - "Канал есть, но обновляется редко (< 2 постов/нед)"
+    - "Активны в Instagram/VK, TG отстаёт"
+  segments:
+    - local_food
+    - beauty_wellness
+    - medical_dental
+    - b2b_services
+
+services:
+  - id: starter
+    name: Старт канала
+    deliverables:
+      - "Аудит и позиционирование"
+      - "Контент-план на 4 недели"
+      - "8 готовых постов"
+    price_rub: 25000
+    cycle_days: 14
+  - id: growth
+    name: Рост и ведение
+    deliverables:
+      - "12 постов/месяц"
+      - "Рубрики и рубрикатор"
+      - "Еженедельный отчёт"
+    price_rub: 45000
+    cycle_days: 30
+  - id: premium
+    name: Premium + воронка
+    deliverables:
+      - "16 постов/месяц"
+      - "Цепочки в боте / закрепы"
+      - "A/B заголовков"
+      - "Созвон 2×/мес"
+    price_rub: 75000
+    cycle_days: 30
+
+sales:
+  outreach_channels:
+    - email
+    - telegram_dm
+    - linkedin
+  daily_lead_target: 5
+  daily_outreach_drafts: 3
+  forbidden:
+    - "Массовый спам без персонализации"
+    - "Обещания гарантированных продаж"
+    - "Сбор персональных данных без согласия"
+
+autonomous:
+  auto_hire: true
+  parallel_workers: 6
+
+hiring:
+  role_pitches:
+    lead_researcher: "Ищет потенциальных клиентов по ICP и сохраняет в memory/leads/"
+    head_of_sales: "Квалифицирует лидов и пишет персональные черновики первого касания"
+    compliance: "Проверяет outreach перед тем, как вы отправите сообщения"
+    account_manager: "Ведёт карточки клиентов и статусы доставки"
+    content_strategist: "Строит контент-планы на 7 дней"
+    copywriter: "Пишет готовые тексты постов для Telegram"
+    marketer: "Готовит рекламные гипотезы, UTM и идеи креативов для лидогенерации"
+    analyst: "Сводит метрики и гипотезы роста"
+    director: "Планирует день и пишет итоговый отчёт"
+
+operations:
+  human_approval_required:
+    - send_outreach
+    - publish_telegram
+    - sign_contract
+    - hire_staff
+  memory_dirs:
+    leads: company/memory/leads
+    clients: company/memory/clients
+    outreach: company/memory/outreach
+    decisions: company/memory/decisions
+    reports: company/memory/reports
+    staff: company/memory/staff
+    marketing: company/memory/marketing

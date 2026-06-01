@@ -1,0 +1,12 @@
+{
+  "date": "2026-05-28",
+  "compliance": "approved",
+  "reviewer": "compliance",
+  "notes": "Персонализация есть, нет гарантий продаж, CTA мягкий. Готово к отправке после human_approval.",
+  "approved": [
+    "lead_001",
+    "lead_005",
+    "lead_002"
+  ],
+  "rejected": []
+}

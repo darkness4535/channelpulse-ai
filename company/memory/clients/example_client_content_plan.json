@@ -1,0 +1,15 @@
+{
+  "client_id": "example_client",
+  "days": [
+    {
+      "day": 1,
+      "rubric": "За кулисами",
+      "topic": "Обжарка зёрен"
+    },
+    {
+      "day": 2,
+      "rubric": "Меню",
+      "topic": "Новый раф"
+    }
+  ]
+}

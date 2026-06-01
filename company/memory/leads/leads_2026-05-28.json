@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-28",
+  "researcher": "lead_researcher",
+  "leads": [
+    {
+      "id": "lead_001",
+      "name": "Кофейня «Бодрое утро»",
+      "segment": "local_food",
+      "city": "Москва",
+      "tg_url": "https://t.me/example_bodroe_utro",
+      "pain_hypothesis": "Канал обновлялся 3 недели назад, в Instagram 4-5 stories/день",
+      "score": 9,
+      "source": "public_telegram_index"
+    },
+    {
+      "id": "lead_002",
+      "name": "Салон «Линия красоты»",
+      "segment": "beauty_wellness",
+      "city": "Санкт-Петербург",
+      "tg_url": "https://t.me/example_liniya",
+      "pain_hypothesis": "Только прайс и акции, нет экспертного контента",
+      "score": 8,
+      "source": "vk_crosslink"
+    },
+    {
+      "id": "lead_003",
+      "name": "Стоматология «Улыбка+»",
+      "segment": "medical_dental",
+      "city": "Казань",
+      "tg_url": "https://t.me/example_ulybka",
+      "pain_hypothesis": "Медицинский контент есть в VK, TG — 1 пост/мес",
+      "score": 8,
+      "source": "niche_search"
+    },
+    {
+      "id": "lead_004",
+      "name": "Юр. бюро «Правовой щит»",
+      "segment": "b2b_services",
+      "city": "Москва",
+      "tg_url": "https://t.me/example_pravoshchit",
+      "pain_hypothesis": "B2B-аудитория, канал без кейсов и FAQ",
+      "score": 7,
+      "source": "linkedin_company_page"
+    },
+    {
+      "id": "lead_005",
+      "name": "Пекарня «Мука и мед»",
+      "segment": "local_food",
+      "city": "Новосибирск",
+      "tg_url": "https://t.me/example_muka_med",
+      "pain_hypothesis": "Сильный офлайн, TG не используется для предзаказов",
+      "score": 9,
+      "source": "public_telegram_index"
+    }
+  ]
+}

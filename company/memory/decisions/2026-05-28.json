@@ -1,0 +1,15 @@
+{
+  "date": "2026-05-28",
+  "decisions": [
+    {
+      "id": "D001",
+      "decision": "Запуск дневного цикла без CURSOR_API_KEY — ручное исполнение ролей через IDE-агента",
+      "owner": "director"
+    },
+    {
+      "id": "D002",
+      "decision": "Приоритет пакета growth для local_food с живым Instagram",
+      "owner": "head_of_sales"
+    }
+  ]
+}

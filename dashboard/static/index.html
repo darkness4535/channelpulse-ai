@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChannelPulse AI — Панель</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1 id="company-name">ChannelPulse AI</h1>
+      <div id="runtime-msg">—</div>
+    </div>
+    <span id="status-badge" class="badge idle">Ожидание</span>
+  </header>
+
+  <div class="stats" style="padding: 0 1rem; max-width: 1600px; margin: 0 auto;">
+    <div class="stat"><div class="n" id="stat-pending">0</div><div class="l">В очереди</div></div>
+    <div class="stat"><div class="n" id="stat-progress">0</div><div class="l">В работе</div></div>
+    <div class="stat"><div class="n" id="stat-done">0</div><div class="l">Готово</div></div>
+    <div class="stat"><div class="n" id="stat-blocked">0</div><div class="l">Отменено</div></div>
+  </div>
+
+  <div class="layout">
+    <aside class="panel">
+      <h2>Управление</h2>
+      <div class="btn-row">
+        <button id="btn-cycle-mock" data-needs-running>Цикл (демо)</button>
+        <button id="btn-cycle-mock-new" class="secondary" data-needs-running>Новый план</button>
+      </div>
+      <div class="btn-row">
+        <button id="btn-cycle-api" class="secondary" data-needs-running>Цикл (Cursor API)</button>
+      </div>
+
+      <h2>Штат</h2>
+      <div id="staff-list" class="staff-list"></div>
+
+      <h2>Указания агентам</h2>
+      <label>Делать</label>
+      <textarea id="directives-do" placeholder="По одному пункту на строку"></textarea>
+      <label>Не делать</label>
+      <textarea id="directives-dont"></textarea>
+      <label>Дополнительно</label>
+      <textarea id="directives-free" style="min-height:60px"></textarea>
+      <button id="btn-save-directives" class="secondary" style="width:100%">Сохранить указания</button>
+
+      <h2>Новая задача</h2>
+      <label>Роль</label>
+      <select id="new-task-role"></select>
+      <label>Заголовок</label>
+      <input type="text" id="new-task-title" placeholder="Задача от владельца" />
+      <label>Что сделать</label>
+      <textarea id="new-task-desc" placeholder="Опишите задачу подробно…"></textarea>
+      <button id="btn-add-task" style="width:100%">Добавить задачу</button>
+    </aside>
+
+    <main class="panel">
+      <h2>Задачи</h2>
+      <div class="task-columns">
+        <div class="task-col">
+          <h3>В работе</h3>
+          <div id="col-progress"></div>
+        </div>
+        <div class="task-col">
+          <h3>Очередь</h3>
+          <div id="col-pending"></div>
+        </div>
+        <div class="task-col">
+          <h3>Выполнено</h3>
+          <div id="col-done"></div>
+        </div>
+        <div class="task-col">
+          <h3>Отменено / блок</h3>
+          <div id="col-blocked"></div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="panel">
+      <h2>Журнал событий</h2>
+      <div id="events" class="events"></div>
+    </aside>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
