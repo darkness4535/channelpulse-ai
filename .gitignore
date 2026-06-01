@@ -2,6 +2,8 @@
 __pycache__/
 *.pyc
 .env
+node_modules/
+tools/node/
 !company/memory/**/.gitkeep
 
 node_modules/
