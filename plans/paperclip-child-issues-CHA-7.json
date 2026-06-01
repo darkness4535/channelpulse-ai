@@ -1,0 +1,47 @@
+{
+  "parentIssue": "CHA-7",
+  "parentId": "use PAPERCLIP_TASK_ID when API available",
+  "planRevision": 1,
+  "createdAt": "2026-06-01T16:30:00Z",
+  "note": "Создать через POST /api/issues с parentId текущей задачи после approval плана",
+  "children": [
+    {
+      "identifier": "CHA-7-CMO",
+      "title": "ChannelPulse Q2: GTM и outreach-шаблоны (неделя 1)",
+      "assignee": "CMO",
+      "priority": "high",
+      "description": "На основе Q2-STRATEGY.md rev.1: ICP one-pager для local_food, 3 персонализированных шаблона первого касания (RU), sales enablement one-pager (pricing FAQ). 3 маркетинговые гипотезы с UTM для июня. Приоритет лида: Кофейня «Зерно» (starter/growth).",
+      "acceptanceCriteria": [
+        "company/memory/marketing/icp-onepager.md — ICP local_food с сигналами боли",
+        "company/memory/outreach/templates/ — минимум 3 шаблона (telegram_dm, email, follow_up)",
+        "company/memory/marketing/sales-enablement.md — FAQ для созвона",
+        "company/memory/marketing/hypotheses_2026-06-01.json — 3 гипотезы с UTM"
+      ]
+    },
+    {
+      "identifier": "CHA-7-CTO",
+      "title": "ChannelPulse Q2: надёжность daily cycle и метрики",
+      "assignee": "CTO",
+      "priority": "high",
+      "description": "Обеспечить стабильный daily cycle ChannelPulse: run_company --cycle daily без ошибок на main. Исправить infra для cloud-агентов (default branch, detached HEAD). Добавить weekly funnel metrics в dashboard или JSON-отчёт. Не трогать companies/localmaps-seo-audit без отдельного issue.",
+      "acceptanceCriteria": [
+        "python -m scripts.run_company --cycle daily --mock --force-new завершается без ошибок",
+        "company/memory/reports/daily_{date}.md генерируется автоматически",
+        "Документирован fix default branch для cursor_cloud adapter",
+        "Funnel snapshot: company/memory/reports/funnel_{date}.json или dashboard widget"
+      ]
+    },
+    {
+      "identifier": "CHA-7-UX",
+      "title": "ChannelPulse Q2: client welcome-pack и шаблоны контента",
+      "assignee": "UXDesigner",
+      "priority": "medium",
+      "description": "Дизайн-спека welcome-pack для нового клиента SMB: onboarding checklist, brand questionnaire, пример оформления поста TG. Подготовить к неделе 3 (pilot delivery).",
+      "acceptanceCriteria": [
+        "company/docs/client-welcome-template.md — структура welcome-pack",
+        "Пример заполненного welcome-pack для demo_coffee_01",
+        "Visual spec поста TG: типографика, CTA, emoji guidelines"
+      ]
+    }
+  ]
+}
