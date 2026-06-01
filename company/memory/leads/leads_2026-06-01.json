@@ -1,0 +1,215 @@
+{
+  "date": "2026-06-01",
+  "issue": "CHA-8",
+  "source": "lead_researcher_web_public",
+  "icp_doc": "company/memory/research/icp_CHA-8_2026-06-01.md",
+  "leads": [
+    {
+      "name": "Кофейня myCamp",
+      "segment": "local_food",
+      "city": "Казань",
+      "tg_url": "https://t.me/mycampkazan",
+      "tg_handle": "@mycampkazan",
+      "pain_hypothesis": "42 подписчика при полноценном офлайне и Taplink — канал не тянет запись и акции, контент можно усилить рубриками «кофе дня / завтраки».",
+      "score": 10,
+      "source": "t.me preview, web search"
+    },
+    {
+      "name": "КофеИОН",
+      "segment": "local_food",
+      "city": "Москва",
+      "tg_url": "https://t.me/kofeyon",
+      "tg_handle": "@kofeyon",
+      "pain_hypothesis": "~80 подписчиков, specialty-точка с картами Яндекса — TG не используется как канал лояльности и новинок зерна.",
+      "score": 9,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Кусь. Маленькая кофейня",
+      "segment": "local_food",
+      "city": "Москва",
+      "tg_url": "https://t.me/malenkayakofeenka",
+      "tg_handle": "@malenkayakofeenka",
+      "pain_hypothesis": "~119 подписчиков, формат «моменты из жизни» без системного контент-плана — риск потери аудитории при росте конкуренции на Кутузовском.",
+      "score": 9,
+      "source": "t.me preview"
+    },
+    {
+      "name": "ПиццаПечь",
+      "segment": "local_food",
+      "city": "Красногорск",
+      "tg_url": "https://t.me/pizzapech",
+      "tg_handle": "@pizzapech",
+      "pain_hypothesis": "86 подписчиков у пиццерии с дровяной печью — мало акций и доставки в ленте, TG не конвертирует в заказ.",
+      "score": 9,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Дон Тормозини (пицца)",
+      "segment": "local_food",
+      "city": "Зеленоград",
+      "tg_url": "https://t.me/dontormozini_pizza",
+      "tg_handle": "@dontormozini_pizza",
+      "pain_hypothesis": "55 подписчиков, минимальное описание — канал не раскрывает меню и UTP, нужен контент-пакет Старт.",
+      "score": 9,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Гоголь•Моголь",
+      "segment": "local_food",
+      "city": "Казань",
+      "tg_url": "https://t.me/gogol_mogol_kazan",
+      "tg_handle": "@gogol_mogol_kazan",
+      "pain_hypothesis": "~196 подписчиков, кондитерская с 2 точками — посты нерегулярны относительно заказов тортов, TG слабее VK/карт.",
+      "score": 8,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Osteria Пиццот",
+      "segment": "local_food",
+      "city": "Москва",
+      "tg_url": "https://t.me/osteriapizzot",
+      "tg_handle": "@osteriapizzot",
+      "pain_hypothesis": "~155 подписчиков при премиум-формате — мало storytelling и бронирования через ленту, упущен премиум-сегмент в TG.",
+      "score": 8,
+      "source": "t.me preview"
+    },
+    {
+      "name": "SAHAR&VOSK (м. Парнас)",
+      "segment": "beauty_wellness",
+      "city": "Санкт-Петербург",
+      "tg_url": "https://t.me/svspbparnas",
+      "tg_handle": "@svspbparnas",
+      "pain_hypothesis": "53 подписчика у сетевой студии — TG не отражает скидку 10% и услуги, вся запись уходит в телефон без контента.",
+      "score": 9,
+      "source": "t.me preview"
+    },
+    {
+      "name": "BarbershopMMM",
+      "segment": "beauty_wellness",
+      "city": "Москва",
+      "tg_url": "https://t.me/barbermmm",
+      "tg_handle": "@barbermmm",
+      "pain_hypothesis": "98 подписчиков, только адрес и телефон — нет портфолио стрижек и CTA на запись, типичный «мёртвый» SMB-канал.",
+      "score": 9,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Барбершоп «Цезарь»",
+      "segment": "beauty_wellness",
+      "city": "Москва",
+      "tg_url": "https://t.me/barbershopKINGmoscow",
+      "tg_handle": "@barbershopKINGmoscow",
+      "pain_hypothesis": "107 подписчиков, прайс в описании без рубрик — нужны посты «до/после» и акции на комплекс.",
+      "score": 8,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Barber shop King Jack",
+      "segment": "beauty_wellness",
+      "city": "Москва",
+      "tg_url": "https://t.me/barbernekrasovka",
+      "tg_handle": "@barbernekrasovka",
+      "pain_hypothesis": "~306 подписчиков, скидка на 1-е посещение не упакована в серию постов — просадка вовлечения.",
+      "score": 7,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Zeppelin Barbershop (ЖК Люблинский парк)",
+      "segment": "beauty_wellness",
+      "city": "Москва",
+      "tg_url": "https://t.me/zeppelin_barbershop_moscow",
+      "tg_handle": "@zeppelin_barbershop_moscow",
+      "pain_hypothesis": "236 подписчиков, упор на виджет записи — мало экспертного контента для удержания жителей ЖК.",
+      "score": 7,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Стоматология Авалон (ЧЛХ)",
+      "segment": "medical_dental",
+      "city": "Россия",
+      "tg_url": "https://t.me/avalon_stom",
+      "tg_handle": "@avalon_stom",
+      "pain_hypothesis": "~194 подписчика, кейсы в закрепе — нужен регулярный медицинский контент без нарушения комплаенса (идеал для compliance-review).",
+      "score": 8,
+      "source": "t.me preview"
+    },
+    {
+      "name": "ИНТАН Стоматологии",
+      "segment": "medical_dental",
+      "city": "5 регионов РФ",
+      "tg_url": "https://t.me/intanstom",
+      "tg_handle": "@intanstom",
+      "pain_hypothesis": "146 подписчиков при сети 37 клиник — федеральный разрыв: центральный TG не масштабирует доверие регионов.",
+      "score": 8,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Стоматология «Лисёнок»",
+      "segment": "medical_dental",
+      "city": "Химки",
+      "tg_url": "https://t.me/STOMHIMKI",
+      "tg_handle": "@STOMHIMKI",
+      "pain_hypothesis": "~180 подписчиков, ссылка на VK в описании — TG дублирует без уникального контента для родителей/детей.",
+      "score": 8,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Moscow Cleaning",
+      "segment": "b2b_services",
+      "city": "Москва",
+      "tg_url": "https://t.me/uborka_moscowcleaning",
+      "tg_handle": "@uborka_moscowcleaning",
+      "pain_hypothesis": "62 подписчика при широком спектре услуг — бот есть, но лента не прогревает B2C и B2B доверие.",
+      "score": 9,
+      "source": "t.me preview"
+    },
+    {
+      "name": "CLEANAСY",
+      "segment": "b2b_services",
+      "city": "Москва и МО",
+      "tg_url": "https://t.me/cleanacy_ru",
+      "tg_handle": "@cleanacy_ru",
+      "pain_hypothesis": "~156 подписчиков — контент не отстраивает от агрегаторов, мало кейсов «до/после» уборки.",
+      "score": 8,
+      "source": "t.me preview"
+    },
+    {
+      "name": "WWCleaning",
+      "segment": "b2b_services",
+      "city": "Москва",
+      "tg_url": "https://t.me/wwcleaning",
+      "tg_handle": "@wwcleaning",
+      "pain_hypothesis": "154 подписчика, частный клинер — нерегулярные посты при нише «эко-уборка детских» (сильный дифференциатор без ленты).",
+      "score": 8,
+      "source": "t.me preview"
+    },
+    {
+      "name": "5Колесо (шиномонтаж)",
+      "segment": "b2b_services",
+      "city": "Москва",
+      "tg_url": "https://t.me/shinomontazh_5koleso",
+      "tg_handle": "@shinomontazh_5koleso",
+      "pain_hypothesis": "228 подписчиков, сезонный бизнес — TG не готовит к сезону шиномонтажа акциями и напоминаниями B2B.",
+      "score": 8,
+      "source": "t.me preview"
+    },
+    {
+      "name": "Цветы и чай",
+      "segment": "local_food",
+      "city": "Люберцы",
+      "tg_url": "https://t.me/flowers_tea",
+      "tg_handle": "@flowers_tea",
+      "pain_hypothesis": "269 подписчиков, скидка 10% на первый заказ — мало праздничных рубрик и букетов «под событие», теряют импульсные заказы.",
+      "score": 7,
+      "source": "t.me preview"
+    }
+  ],
+  "segment_counts": {
+    "local_food": 8,
+    "beauty_wellness": 5,
+    "medical_dental": 3,
+    "b2b_services": 4
+  },
+  "notes": "Только публичные данные с t.me. Перед outreach — квалификация head_of_sales и compliance для medical_dental."
+}
