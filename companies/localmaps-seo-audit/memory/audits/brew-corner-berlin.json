@@ -1,0 +1,49 @@
+{
+  "lead_id": "brew-corner-berlin",
+  "business_name": "Brew Corner Coffee",
+  "city": "Berlin",
+  "country": "DE",
+  "maps_url": "https://maps.google.com/?q=Brew+Corner+Coffee+Berlin",
+  "visibility_score": 67,
+  "checklist": {
+    "business_name_consistent": true,
+    "primary_category_set": true,
+    "additional_categories": true,
+    "description_filled": false,
+    "website_link_valid": true,
+    "phone_listed": true,
+    "hours_complete": true,
+    "service_area_defined": true,
+    "photos_count_adequate": false,
+    "owner_posts_recent": false,
+    "reviews_count_healthy": false,
+    "review_responses": true,
+    "rating_above_competitors": false,
+    "attributes_complete": true,
+    "social_links_present": true
+  },
+  "checklist_passed": 10,
+  "checklist_total": 15,
+  "quick_wins": [
+    {
+      "title": "Complete your GBP description",
+      "impact": "high",
+      "effort": "low",
+      "detail": "Add 150+ chars with services, area, and keywords."
+    },
+    {
+      "title": "Launch a review request campaign",
+      "impact": "high",
+      "effort": "medium",
+      "detail": "Target 5 new reviews/month via email/SMS after service."
+    },
+    {
+      "title": "Upload 10+ quality photos",
+      "impact": "medium",
+      "effort": "low",
+      "detail": "Exterior, interior, team, and top services."
+    }
+  ],
+  "competitor_note": "Competitors in Local Pack have stronger profiles — see quick wins.",
+  "offer_cta": "Book a full audit + 90-day roadmap ($299)"
+}

@@ -11,8 +11,20 @@ from enum import Enum
 from pathlib import Path
 from typing import Iterator
 
-QUEUE_PATH = Path(__file__).resolve().parent / "memory" / "tasks.jsonl"
+from company.context import get_active_company
+
 _queue_lock = threading.Lock()
+
+
+def _queue_path() -> Path:
+    return get_active_company().tasks_path
+
+
+def ensure_queue() -> None:
+    path = _queue_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not path.exists():
+        path.write_text("", encoding="utf-8")
 
 
 class TaskStatus(str, Enum):
@@ -48,16 +60,10 @@ class Task:
         return cls(**data)
 
 
-def ensure_queue() -> None:
-    QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    if not QUEUE_PATH.exists():
-        QUEUE_PATH.write_text("", encoding="utf-8")
-
-
 def append_task(task: Task) -> Task:
     ensure_queue()
     with _queue_lock:
-        with QUEUE_PATH.open("a", encoding="utf-8") as f:
+        with _queue_path().open("a", encoding="utf-8") as f:
             f.write(task.to_json() + "\n")
     return task
 
@@ -65,7 +71,7 @@ def append_task(task: Task) -> Task:
 def load_tasks(status: TaskStatus | None = None) -> list[Task]:
     ensure_queue()
     tasks: list[Task] = []
-    for line in QUEUE_PATH.read_text(encoding="utf-8").splitlines():
+    for line in _queue_path().read_text(encoding="utf-8").splitlines():
         line = line.strip()
         if not line:
             continue
@@ -94,7 +100,7 @@ def update_task(task_id: str, **changes) -> bool:
                 updated = True
             lines.append(task.to_json())
         if updated:
-            QUEUE_PATH.write_text(
+            _queue_path().write_text(
                 "\n".join(lines) + ("\n" if lines else ""), encoding="utf-8"
             )
     return updated
@@ -132,7 +138,7 @@ def supersede_daily_plans(plan_date: str, *, include_today: bool = False) -> int
                 }
                 count += 1
             lines.append(task.to_json())
-        QUEUE_PATH.write_text(
+        _queue_path().write_text(
             "\n".join(lines) + ("\n" if lines else ""), encoding="utf-8"
         )
     return count

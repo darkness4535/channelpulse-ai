@@ -1,0 +1,8 @@
+{
+  "date": "2026-06-01",
+  "leads": 3,
+  "audits": 2,
+  "drafts": 2,
+  "approved": 2,
+  "funnel": "leads→audit→draft→approved"
+}

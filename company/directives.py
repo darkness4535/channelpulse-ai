@@ -7,7 +7,8 @@ import threading
 from datetime import datetime, timezone
 from pathlib import Path
 
-DIRECTIVES_PATH = Path(__file__).resolve().parent / "memory" / "directives.json"
+from company.context import get_active_company
+
 _lock = threading.Lock()
 
 _DEFAULT = {
@@ -24,11 +25,37 @@ _DEFAULT = {
     "updated_at": None,
 }
 
+_LOCALMAPS_DEFAULT = {
+    "do": [
+        "Фокус на локальном бизнесе EU/US с Google Business Profile",
+        "Персонализировать outreach с PDF-аудитом",
+        "Соблюдать GDPR (EU) и CAN-SPAM (US)",
+    ],
+    "dont": [
+        "Не отправлять outreach без human approval",
+        "Не скрейпить Google Maps в нарушение ToS",
+        "Не обещать #1 в Local Pack",
+        "Не собирать ПДн без правового основания",
+    ],
+    "freeform": "",
+    "updated_at": None,
+}
+
+
+def _directives_path() -> Path:
+    return get_active_company().directives_path
+
+
+def _default_for_company() -> dict:
+    if get_active_company().slug == "localmaps-seo-audit":
+        return dict(_LOCALMAPS_DEFAULT)
+    return dict(_DEFAULT)
+
 
 def load_directives() -> dict:
     _ensure()
     with _lock:
-        return json.loads(DIRECTIVES_PATH.read_text(encoding="utf-8"))
+        return json.loads(_directives_path().read_text(encoding="utf-8"))
 
 
 def save_directives(
@@ -46,7 +73,7 @@ def save_directives(
         current["freeform"] = freeform.strip()
     current["updated_at"] = datetime.now(timezone.utc).isoformat()
     with _lock:
-        DIRECTIVES_PATH.write_text(
+        _directives_path().write_text(
             json.dumps(current, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
@@ -68,9 +95,10 @@ def format_for_prompt() -> str:
 
 
 def _ensure() -> None:
-    DIRECTIVES_PATH.parent.mkdir(parents=True, exist_ok=True)
-    if not DIRECTIVES_PATH.exists():
-        DIRECTIVES_PATH.write_text(
-            json.dumps(_DEFAULT, ensure_ascii=False, indent=2),
+    path = _directives_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not path.exists():
+        path.write_text(
+            json.dumps(_default_for_company(), ensure_ascii=False, indent=2),
             encoding="utf-8",
         )

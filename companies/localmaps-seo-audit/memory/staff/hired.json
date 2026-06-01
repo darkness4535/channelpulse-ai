@@ -1,0 +1,32 @@
+[
+  {
+    "role_id": "analyst",
+    "hired_at": "2026-06-01T15:09:36.445196+00:00",
+    "approved_by": "owner"
+  },
+  {
+    "role_id": "compliance",
+    "hired_at": "2026-06-01T15:09:36.445541+00:00",
+    "approved_by": "owner"
+  },
+  {
+    "role_id": "head_of_sales",
+    "hired_at": "2026-06-01T15:09:36.445767+00:00",
+    "approved_by": "owner"
+  },
+  {
+    "role_id": "lead_researcher",
+    "hired_at": "2026-06-01T15:09:36.446414+00:00",
+    "approved_by": "owner"
+  },
+  {
+    "role_id": "marketer",
+    "hired_at": "2026-06-01T15:09:36.446715+00:00",
+    "approved_by": "owner"
+  },
+  {
+    "role_id": "seo_auditor",
+    "hired_at": "2026-06-01T15:09:36.447103+00:00",
+    "approved_by": "owner"
+  }
+]

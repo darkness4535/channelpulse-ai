@@ -5,7 +5,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-ROLES_DIR = Path(__file__).resolve().parent.parent / "roles"
+from company.context import get_active_company
+
+DEFAULT_ROLES_DIR = Path(__file__).resolve().parent.parent / "roles"
+
+
+def _roles_dir() -> Path:
+    return get_active_company().roles_dir
 
 
 @dataclass(frozen=True)
@@ -21,9 +27,10 @@ class Employee:
 
 
 def discover_role_ids() -> list[str]:
-    if not ROLES_DIR.is_dir():
+    roles_dir = _roles_dir()
+    if not roles_dir.is_dir():
         return []
-    return sorted(p.stem for p in ROLES_DIR.glob("*.md"))
+    return sorted(p.stem for p in roles_dir.glob("*.md"))
 
 
 def role_display_name(role_id: str) -> str:
@@ -37,12 +44,13 @@ def role_display_name(role_id: str) -> str:
         "analyst": "Аналитик",
         "compliance": "Комплаенс",
         "marketer": "Маркетолог",
+        "seo_auditor": "SEO-аудитор GBP",
     }
     return titles.get(role_id, role_id.replace("_", " ").title())
 
 
 def _read_role(role_id: str) -> str:
-    path = ROLES_DIR / f"{role_id}.md"
+    path = _roles_dir() / f"{role_id}.md"
     if not path.exists():
         raise KeyError(f"Unknown role: {role_id}")
     return path.read_text(encoding="utf-8")

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CLI entrypoint for ChannelPulse AI."""
+"""CLI entrypoint for autonomous AI companies."""
 
 from __future__ import annotations
 
@@ -23,6 +23,7 @@ from dotenv import load_dotenv
 load_dotenv(ROOT / ".env")
 os.environ.setdefault("COMPANY_AUTONOMOUS", "1")
 
+from company.context import list_companies, set_active_company
 from company.orchestrator import load_config, run_daily_cycle, run_single_role
 from company.registry import hire, list_roles
 from company.staff import fire_from_staff, hire_to_staff, is_hired, print_roster
@@ -30,7 +31,12 @@ from company.staff import fire_from_staff, hire_to_staff, is_hired, print_roster
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="ChannelPulse AI — автономная компания (параллельно, без участия)"
+        description="Autonomous AI company — parallel daily cycles"
+    )
+    parser.add_argument(
+        "--company",
+        default=None,
+        help="Company slug (channelpulse, localmaps-seo-audit, ...)",
     )
     parser.add_argument("--cycle", choices=["daily"], help="Дневной цикл")
     parser.add_argument("--role", help="Одна роль")
@@ -51,16 +57,25 @@ def main() -> None:
         help="Потоков параллельно (по умолчанию из config)",
     )
     parser.add_argument("--list-roles", action="store_true")
+    parser.add_argument("--list-companies", action="store_true")
     parser.add_argument("--staff", action="store_true")
     parser.add_argument("--hire", metavar="ROLE")
     parser.add_argument("--fire", metavar="ROLE")
     args = parser.parse_args()
+
+    if args.company:
+        set_active_company(args.company)
 
     if args.mock:
         os.environ["COMPANY_MOCK"] = "1"
 
     if args.interactive:
         os.environ["COMPANY_AUTONOMOUS"] = "0"
+
+    if args.list_companies:
+        for slug in list_companies():
+            print(f"  • {slug}")
+        return
 
     if args.list_roles:
         for r in list_roles():
@@ -91,6 +106,7 @@ def main() -> None:
             auto_no=args.no_hire,
             force_new=args.force_new,
             workers=args.workers,
+            company=args.company,
         )
         sys.exit(code)
 
@@ -103,14 +119,15 @@ def main() -> None:
             dry_run=args.dry_run,
             interactive=args.interactive,
             auto_no=args.no_hire,
+            company=args.company,
         )
         return
 
     cfg = load_config()
     print(f"\n{cfg['company']['name']} — автономный режим (по умолчанию)")
     print("  python -m scripts.run_company --cycle daily --mock --force-new")
+    print("  python -m scripts.run_company --cycle daily --mock --company localmaps-seo-audit")
     print("  python -m scripts.run_autonomous --once --mock")
-    print("  python -m scripts.run_autonomous --interval-hours 24 --mock  # daemon")
 
 
 if __name__ == "__main__":

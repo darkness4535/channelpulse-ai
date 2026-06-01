@@ -1,0 +1,37 @@
+{
+  "lead_id": "glow-studio-austin",
+  "business_name": "Glow Studio Spa",
+  "city": "Austin",
+  "country": "US",
+  "maps_url": "https://maps.google.com/?q=Glow+Studio+Austin",
+  "visibility_score": 87,
+  "checklist": {
+    "business_name_consistent": true,
+    "primary_category_set": true,
+    "additional_categories": true,
+    "description_filled": true,
+    "website_link_valid": true,
+    "phone_listed": true,
+    "hours_complete": true,
+    "service_area_defined": true,
+    "photos_count_adequate": true,
+    "owner_posts_recent": true,
+    "reviews_count_healthy": true,
+    "review_responses": false,
+    "rating_above_competitors": true,
+    "attributes_complete": true,
+    "social_links_present": false
+  },
+  "checklist_passed": 13,
+  "checklist_total": 15,
+  "quick_wins": [
+    {
+      "title": "Fix: no responses",
+      "impact": "high",
+      "effort": "medium",
+      "detail": "Address the top pain signal found in your profile."
+    }
+  ],
+  "competitor_note": "Competitors in Local Pack have stronger profiles — see quick wins.",
+  "offer_cta": "Book a full audit + 90-day roadmap ($299)"
+}

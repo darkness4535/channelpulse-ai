@@ -1,0 +1,56 @@
+{
+  "date": "2026-06-01",
+  "source": "mock",
+  "region": "EU/US",
+  "leads": [
+    {
+      "lead_id": "brew-corner-berlin",
+      "name": "Brew Corner Coffee",
+      "segment": "local_food",
+      "city": "Berlin",
+      "country": "DE",
+      "maps_url": "https://maps.google.com/?q=Brew+Corner+Coffee+Berlin",
+      "rating": 3.8,
+      "review_count": 12,
+      "website": "https://example.com/brew-corner",
+      "contact_email": "hello@brew-corner.example",
+      "pain_signals": [
+        "few photos",
+        "empty description",
+        "no posts"
+      ],
+      "score": 8,
+      "source": "public directory"
+    },
+    {
+      "lead_id": "glow-studio-austin",
+      "name": "Glow Studio Spa",
+      "segment": "beauty_wellness",
+      "city": "Austin",
+      "country": "US",
+      "maps_url": "https://maps.google.com/?q=Glow+Studio+Austin",
+      "rating": 4.1,
+      "review_count": 34,
+      "website": "https://example.com/glow-studio",
+      "pain_signals": [
+        "no responses",
+        "no social"
+      ],
+      "score": 7,
+      "source": "manual research"
+    },
+    {
+      "lead_id": "quick-fix-plumbing-dallas",
+      "name": "QuickFix Plumbing",
+      "segment": "home_services",
+      "city": "Dallas",
+      "country": "US",
+      "maps_url": "https://maps.google.com/?q=QuickFix+Plumbing+Dallas",
+      "rating": 4.5,
+      "review_count": 89,
+      "website": "https://example.com/quickfix",
+      "score": 5,
+      "source": "manual research"
+    }
+  ]
+}

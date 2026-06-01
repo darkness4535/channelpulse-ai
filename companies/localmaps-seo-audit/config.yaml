@@ -1,0 +1,97 @@
+company:
+  name: LocalMaps SEO Audit
+  tagline: "Your business on the map — visibility you can measure"
+  locale: en-US
+  timezone: UTC
+
+niche:
+  id: google_maps_local_seo
+  description: >
+    SEO audit and Google Business Profile optimization for local businesses
+    in Europe and the United States. Cold outreach with personalized PDF reports.
+
+ideal_customer:
+  regions:
+    - EU
+    - US
+  signals:
+    - "Has Google Business Profile with weak content or low rating"
+    - "Few reviews or irregular owner responses"
+    - "Competitors rank higher in Local Pack for same niche"
+    - "Missing website/social links or broken URLs in profile"
+  segments:
+    - local_food
+    - beauty_wellness
+    - medical_dental
+    - home_services
+    - automotive
+    - retail_local
+
+services:
+  - id: mini_audit_pdf
+    name: Free mini-audit (PDF)
+    deliverables:
+      - "GBP checklist (15 items)"
+      - "Visibility score 0–100"
+      - "3 quick wins"
+    price_usd: 0
+    cycle_days: 3
+  - id: full_audit
+    name: Full audit + roadmap
+    deliverables:
+      - "Detailed GBP + local SEO audit"
+      - "90-day roadmap"
+      - "Comparison with 3 Local Pack competitors"
+    price_usd: 299
+    cycle_days: 7
+  - id: monthly_growth
+    name: Maps + local SEO retainer
+    deliverables:
+      - "Monthly performance report"
+      - "Google Ads / LSA recommendations"
+      - "Profile and review update playbook"
+    price_usd: 499
+    cycle_days: 30
+
+sales:
+  outreach_channels:
+    - email
+    - telegram_dm
+    - whatsapp
+  daily_lead_target: 8
+  daily_outreach_drafts: 4
+  forbidden:
+    - "Mass spam without personalization and opt-out"
+    - "Guaranteed #1 Local Pack ranking"
+    - "Personal data collection without legal basis (GDPR/CAN-SPAM)"
+    - "Google Maps scraping in violation of ToS"
+
+autonomous:
+  auto_hire: true
+  parallel_workers: 6
+
+hiring:
+  role_pitches:
+    lead_researcher: "Finds Google Maps businesses by EU/US ICP, saves to memory/leads/"
+    seo_auditor: "Runs GBP checklist, scores visibility, generates PDF mini-audits"
+    head_of_sales: "Qualifies leads, attaches PDF audit, writes personalized drafts"
+    compliance: "Reviews outreach for GDPR/CAN-SPAM and config forbidden rules"
+    account_manager: "Manages deals after lead response"
+    analyst: "Summarizes audit→reply→paid funnel metrics"
+    marketer: "GTM hypotheses and creatives for EU/US"
+    director: "Plans cycle and writes daily report"
+
+operations:
+  human_approval_required:
+    - send_outreach
+    - launch_paid_ads
+    - sign_contract
+    - hire_staff
+  memory_dirs:
+    leads: companies/localmaps-seo-audit/memory/leads
+    audits: companies/localmaps-seo-audit/memory/audits
+    outreach: companies/localmaps-seo-audit/memory/outreach
+    decisions: companies/localmaps-seo-audit/memory/decisions
+    reports: companies/localmaps-seo-audit/memory/reports
+    staff: companies/localmaps-seo-audit/memory/staff
+    marketing: companies/localmaps-seo-audit/memory/marketing

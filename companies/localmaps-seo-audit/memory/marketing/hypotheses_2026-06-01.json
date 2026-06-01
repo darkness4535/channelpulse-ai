@@ -1,0 +1,23 @@
+{
+  "date": "2026-06-01",
+  "hypotheses": [
+    {
+      "channel": "cold_email_eu_food",
+      "offer": "mini_audit_pdf",
+      "utm": "lm_email_food_de",
+      "note": "Berlin/Munich coffee shops, EN+DE subject lines"
+    },
+    {
+      "channel": "whatsapp_us_home_services",
+      "offer": "full_audit",
+      "utm": "lm_wa_home_us",
+      "note": "Dallas/Houston plumbers, short video + PDF"
+    },
+    {
+      "channel": "telegram_beauty_eu",
+      "offer": "monthly_growth",
+      "utm": "lm_tg_beauty_eu",
+      "note": "Salons with IG but weak Maps"
+    }
+  ]
+}

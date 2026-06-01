@@ -1,0 +1,12 @@
+{
+  "email_en": {
+    "subject": "Quick Google Maps report for {{business_name}}",
+    "body": "Hi {{contact_name}},\n\nI reviewed {{business_name}}'s Google Business Profile — visibility score {{score}}/100.\n\nI've attached a free mini-audit with 3 quick wins you can implement this week.\n\nIf you'd like the full 90-day roadmap ($299), reply to this email.\n\nBest,\n{{sender_name}}\nLocalMaps SEO Audit\n\nReply STOP to opt out."
+  },
+  "telegram_en": {
+    "body": "Hi — I prepared a free Google Maps visibility report for {{business_name}} (score {{score}}/100). 3 quick fixes inside the PDF. Interested in the full audit?"
+  },
+  "whatsapp_en": {
+    "body": "Hi {{business_name}} team — your Maps profile has room to grow. Free mini-audit PDF attached (score {{score}}/100). Reply STOP to opt out."
+  }
+}

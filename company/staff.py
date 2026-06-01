@@ -7,8 +7,7 @@ from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 
-STAFF_DIR = Path(__file__).resolve().parent / "memory" / "staff"
-ROSTER_PATH = STAFF_DIR / "hired.json"
+from company.context import get_active_company
 
 # CEO всегда в системе; найм не спрашиваем.
 EXEMPT_FROM_HIRE_GATE = frozenset({"director"})
@@ -23,15 +22,20 @@ class HiredMember:
     approved_by: str = "owner"
 
 
+def _staff_path() -> Path:
+    return get_active_company().staff_path
+
+
 def _ensure_staff_dir() -> None:
-    STAFF_DIR.mkdir(parents=True, exist_ok=True)
-    if not ROSTER_PATH.exists():
-        ROSTER_PATH.write_text("[]", encoding="utf-8")
+    path = _staff_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not path.exists():
+        path.write_text("[]", encoding="utf-8")
 
 
 def load_roster() -> list[HiredMember]:
     _ensure_staff_dir()
-    raw = json.loads(ROSTER_PATH.read_text(encoding="utf-8"))
+    raw = json.loads(_staff_path().read_text(encoding="utf-8"))
     return [HiredMember(**item) for item in raw]
 
 
@@ -52,7 +56,7 @@ def hire_to_staff(role_id: str) -> HiredMember:
         return next(m for m in members if m.role_id == role_id)
     member = HiredMember(role_id=role_id)
     members.append(member)
-    ROSTER_PATH.write_text(
+    _staff_path().write_text(
         json.dumps([asdict(m) for m in members], ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
@@ -66,7 +70,7 @@ def fire_from_staff(role_id: str) -> bool:
     kept = [m for m in members if m.role_id != role_id]
     if len(kept) == len(members):
         return False
-    ROSTER_PATH.write_text(
+    _staff_path().write_text(
         json.dumps([asdict(m) for m in kept], ensure_ascii=False, indent=2),
         encoding="utf-8",
     )

@@ -1,0 +1,30 @@
+{
+  "date": "2026-06-01",
+  "status": "draft",
+  "items": [
+    {
+      "lead_id": "brew-corner-berlin",
+      "lead": "Brew Corner Coffee",
+      "channel": "email",
+      "offer": "mini_audit_pdf",
+      "language": "en",
+      "pdf_path": "/workspace/companies/localmaps-seo-audit/memory/audits/brew-corner-berlin.pdf",
+      "message": "Hi — I put together a free Google Maps visibility report for Brew Corner (score 47/100). Three quick wins inside. Want the full 90-day roadmap?"
+    },
+    {
+      "lead_id": "glow-studio-austin",
+      "lead": "Glow Studio Spa",
+      "channel": "whatsapp",
+      "offer": "mini_audit_pdf",
+      "language": "en",
+      "pdf_path": "/workspace/companies/localmaps-seo-audit/memory/audits/glow-studio-austin.pdf",
+      "message": "Hi Glow Studio — your Maps profile has room to grow. Attached a mini-audit PDF with 3 fixes. Reply STOP to opt out."
+    }
+  ],
+  "compliance": "approved",
+  "checks": [
+    "gdpr_lawful_basis",
+    "can_spam_opt_out",
+    "personalized"
+  ]
+}

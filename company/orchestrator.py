@@ -8,137 +8,27 @@ import sys
 from datetime import date
 from pathlib import Path
 
-import yaml
-
 from company.agent_runner import run_task, use_mock_mode
+from company.context import CompanyContext, get_active_company, set_active_company
 from company.directives import format_for_prompt
 from company.events import log_event
 from company import runtime_state
 from company.hiring import ensure_hired_for_task, is_autonomous, prepare_team_for_cycle
 from company.parallel import default_workers, run_tasks_parallel
+from company.plans import build_daily_plan
 from company.registry import hire
 from company.staff import is_hired, print_roster
 from company.tasks import Task, TaskStatus, append_task, load_tasks, supersede_daily_plans
 
-CONFIG_PATH = Path(__file__).resolve().parent / "config.yaml"
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 
-def load_config() -> dict:
-    with CONFIG_PATH.open(encoding="utf-8") as f:
-        return yaml.safe_load(f)
+def load_config(ctx: CompanyContext | None = None) -> dict:
+    return (ctx or get_active_company()).load_config()
 
 
-def _memory_path(cfg: dict, key: str) -> Path:
-    rel = cfg["operations"]["memory_dirs"][key]
-    p = PROJECT_ROOT / rel
-    p.mkdir(parents=True, exist_ok=True)
-    return p
-
-
-def _plan_meta(today: str, stage: str, depends_on: list[str] | None = None, **extra) -> dict:
-    meta = {"cycle": "daily", "plan_date": today, "stage": stage}
-    if depends_on:
-        meta["depends_on"] = depends_on
-    meta.update(extra)
-    return meta
-
-
-def build_daily_plan(cfg: dict) -> list[Task]:
-    """Director plan with dependency stages for parallel waves."""
-    today = date.today().isoformat()
-    sales = cfg["sales"]
-    return [
-        Task(
-            title=f"Lead research {today}",
-            role="lead_researcher",
-            description=(
-                f"Найди {sales['daily_lead_target']} потенциальных клиентов по ICP из config. "
-                "Для каждого: название, ниша, ссылка на TG/сайт, почему подходят, score 1-10. "
-                f"Сохрани JSON в company/memory/leads/leads_{today}.json"
-            ),
-            priority=1,
-            metadata=_plan_meta(today, "leads"),
-        ),
-        Task(
-            title=f"Client delivery check {today}",
-            role="account_manager",
-            description=(
-                "Проверь company/memory/clients/*.json. Для активных клиентов: "
-                "статус, что сделано, что нужно сегодня. Если клиентов нет — "
-                "создай шаблон example_client.json с демо-брифом кофейни."
-            ),
-            priority=2,
-            metadata=_plan_meta(today, "clients"),
-        ),
-        Task(
-            title=f"Marketing hypotheses {today}",
-            role="marketer",
-            description=(
-                "На основе ICP и услуг из config: 3 рекламные гипотезы "
-                "(канал, оффер, UTM, краткий креатив). "
-                f"Сохрани company/memory/marketing/hypotheses_{today}.json"
-            ),
-            priority=3,
-            metadata=_plan_meta(today, "marketing"),
-        ),
-        Task(
-            title=f"Qualify leads {today}",
-            role="head_of_sales",
-            description=(
-                f"Прочитай leads_{today}.json. Оставь топ-{sales['daily_outreach_drafts']} "
-                "лидов. Для каждого: боль, пакет (starter/growth/premium), "
-                "черновик первого сообщения (RU, персонально). "
-                f"Сохрани company/memory/outreach/drafts_{today}.json. Не отправлять."
-            ),
-            priority=4,
-            metadata=_plan_meta(today, "sales", ["leads"]),
-        ),
-        Task(
-            title=f"Content pipeline {today}",
-            role="content_strategist",
-            description=(
-                "Для каждого активного клиента: контент-план на 7 дней "
-                "в memory/clients/<id>_content_plan.json"
-            ),
-            priority=5,
-            metadata=_plan_meta(today, "content", ["clients"]),
-        ),
-        Task(
-            title=f"Compliance review outreach {today}",
-            role="compliance",
-            description=(
-                f"Проверь drafts_{today}.json: запреты из config, тон. "
-                "Одобренные — outreach/approved/approved_{today}.json"
-            ),
-            priority=6,
-            metadata=_plan_meta(today, "compliance", ["sales"]),
-        ),
-        Task(
-            title=f"Copywriting {today}",
-            role="copywriter",
-            description=(
-                "По content_plan: тексты постов на 3 дня. Заголовок, текст, CTA, хештеги. RU."
-            ),
-            priority=7,
-            metadata=_plan_meta(today, "copy", ["content"]),
-        ),
-        Task(
-            title=f"Director summary {today}",
-            role="director",
-            description=(
-                f"Итог дня в company/memory/reports/daily_{today}.md: "
-                "лиды, outreach, маркетинг, клиенты, риски, план на завтра."
-            ),
-            priority=9,
-            metadata=_plan_meta(
-                today,
-                "director",
-                ["leads", "clients", "marketing", "sales", "content", "compliance", "copy"],
-                final=True,
-            ),
-        ),
-    ]
+def _memory_path(cfg: dict, key: str, ctx: CompanyContext | None = None) -> Path:
+    return (ctx or get_active_company()).memory_path(key, cfg)
 
 
 def today_plan_date() -> str:
@@ -160,6 +50,7 @@ def tasks_for_today_plan() -> list[Task]:
 
 def enqueue_daily_cycle(cfg: dict, *, force_new: bool = False) -> list[Task]:
     today = today_plan_date()
+    ctx = get_active_company()
 
     if force_new:
         n = supersede_daily_plans(today, include_today=True)
@@ -178,7 +69,7 @@ def enqueue_daily_cycle(cfg: dict, *, force_new: bool = False) -> list[Task]:
     if pending and not force_new:
         return tasks_for_today_plan()
 
-    for task in build_daily_plan(cfg):
+    for task in build_daily_plan(ctx.slug, cfg):
         append_task(task)
     return tasks_for_today_plan()
 
@@ -186,6 +77,8 @@ def enqueue_daily_cycle(cfg: dict, *, force_new: bool = False) -> list[Task]:
 def format_agent_prompt(employee_role: str, task: Task, cfg: dict) -> str:
     employee = hire(employee_role)
     company_name = cfg["company"]["name"]
+    locale = cfg["company"].get("locale", "ru-RU")
+    lang_note = "EN" if locale.startswith("en") else "RU"
     return f"""# Роль
 {employee.system_prompt}
 
@@ -201,8 +94,8 @@ def format_agent_prompt(employee_role: str, task: Task, cfg: dict) -> str:
 
 # Правила
 - Пиши файлы в репозиторий по указанным путям (создай папки при необходимости).
-- Не отправляй сообщения лидам и не публикуй в Telegram — только черновики и файлы.
-- Отвечай по-русски, структурированно.
+- Не отправляй сообщения лидам и не запускай рекламу — только черновики и файлы.
+- Отвечай на {lang_note}, структурированно.
 - В конце: краткий статус DONE / BLOCKED и что сделано.
 
 {format_for_prompt()}
@@ -223,16 +116,19 @@ def run_daily_cycle(
     auto_no: bool = False,
     force_new: bool = False,
     workers: int | None = None,
+    company: str | None = None,
 ) -> int:
     """Returns exit code 0 if all tasks done, 1 if any failed."""
-    cfg = load_config()
+    ctx = set_active_company(company) if company else get_active_company()
+    cfg = ctx.load_config()
     for key in cfg["operations"]["memory_dirs"]:
-        _memory_path(cfg, key)
+        _memory_path(cfg, key, ctx)
 
     tasks = enqueue_daily_cycle(cfg, force_new=force_new)
     w = workers if workers is not None else default_workers(cfg)
 
     print(f"\n{cfg['company']['name']} — автономный цикл: {len(tasks)} задач, {w} потоков")
+    print(f"Компания: {ctx.slug}")
     if is_autonomous(cfg) and not interactive:
         print("Режим: полная автономия (найм и выполнение без участия владельца)")
     print_roster()
@@ -269,7 +165,6 @@ def run_daily_cycle(
         dry_run=False,
     )
 
-    # Автонайм перед параллельным запуском (на случай ad-hoc ролей)
     active = load_tasks()
     task_by_id = {t.id: t for t in active}
     for t in tasks:
@@ -280,7 +175,6 @@ def run_daily_cycle(
             fresh, cfg, interactive=interactive, auto_no=auto_no
         )
 
-    today = today_plan_date()
     pending = [
         t
         for t in tasks_for_today_plan()
@@ -337,7 +231,8 @@ def run_daily_cycle(
     plan_tasks = tasks_for_today_plan()
     n_done = sum(1 for t in plan_tasks if t.status == TaskStatus.DONE)
     print(f"\nИтог: {n_done}/{len(plan_tasks)} задач закрыто, ошибок: {len(failed)}")
-    print("Артефакты: company/memory/reports/")
+    reports_dir = cfg["operations"]["memory_dirs"].get("reports", "company/memory/reports")
+    print(f"Артефакты: {reports_dir}/")
     return 1 if failed else 0
 
 
@@ -348,7 +243,10 @@ def run_single_role(
     dry_run: bool = False,
     interactive: bool = False,
     auto_no: bool = False,
+    company: str | None = None,
 ) -> None:
+    if company:
+        set_active_company(company)
     cfg = load_config()
     task = Task(title="Ad-hoc", role=role, description=task_text, priority=0)
     if dry_run:

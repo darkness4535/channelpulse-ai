@@ -1,0 +1,15 @@
+{
+  "do": [
+    "Фокус на локальном бизнесе EU/US с Google Business Profile",
+    "Персонализировать outreach с PDF-аудитом",
+    "Соблюдать GDPR (EU) и CAN-SPAM (US)"
+  ],
+  "dont": [
+    "Не отправлять outreach без human approval",
+    "Не скрейпить Google Maps в нарушение ToS",
+    "Не обещать #1 в Local Pack",
+    "Не собирать ПДн без правового основания"
+  ],
+  "freeform": "",
+  "updated_at": null
+}
