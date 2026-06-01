@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-01",
+  "decisions": [
+    {
+      "id": "D-CHA-8",
+      "issue": "CHA-8",
+      "decision": "ICP задокументирован; 20 лидов сохранены в leads_2026-06-01.json для квалификации head_of_sales",
+      "owner": "lead_researcher",
+      "artifacts": [
+        "company/memory/research/icp_CHA-8_2026-06-01.md",
+        "company/memory/leads/leads_2026-06-01.json"
+      ]
+    }
+  ]
+}
