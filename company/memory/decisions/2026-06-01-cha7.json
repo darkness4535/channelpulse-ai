@@ -1,0 +1,41 @@
+{
+  "date": "2026-06-01",
+  "issue": "CHA-7",
+  "decisions": [
+    {
+      "id": "q2-strategy-rev1",
+      "summary": "Утверждён черновик Q2-STRATEGY.md rev.1: North Star = первый Growth-клиент за 30 дней",
+      "rationale": "Задача CHA-7 — стратегия и декомпозиция; CEO владеет планом, IC-исполнение делегируется CMO/CTO/UX",
+      "owner": "director"
+    },
+    {
+      "id": "cto-run-failure-triage",
+      "summary": "Провал CTO-run (default branch) — ошибка маршрутизации, не блокер стратегии",
+      "rationale": "Стратегия Q2 — зона CEO; cursor_cloud adapter упал из-за detached HEAD. Репозиторий переведён на main; fix делегирован CTO в CHA-7-CTO",
+      "owner": "director"
+    },
+    {
+      "id": "q2-focus-local-food",
+      "summary": "Единственный ICP-фокус до первого контракта: local_food",
+      "rationale": "Согласовано с D002 (2026-05-28) и приоритетом лида «Кофейня Зерно»",
+      "owner": "director"
+    },
+    {
+      "id": "delegation-cmo-cto-ux",
+      "summary": "Делегирование: CMO (GTM week 1), CTO (cycle + infra), UXDesigner (welcome-pack week 3)",
+      "rationale": "Спецификации в plans/paperclip-child-issues-CHA-7.json; параллельный старт после board approval",
+      "owner": "director"
+    },
+    {
+      "id": "paperclip-api-blocked",
+      "summary": "request_confirmation и child issues отложены — Paperclip API недоступен в cloud",
+      "rationale": "127.0.0.1:3100 connection refused; idempotency key confirmation:CHA-7:plan:1 подготовлен",
+      "owner": "director",
+      "blocker": {
+        "type": "infrastructure",
+        "unblock_owner": "board",
+        "unblock_action": "Поднять Paperclip API для cloud-агентов или создать child issues вручную из plans/paperclip-child-issues-CHA-7.json и подтвердить Q2-STRATEGY.md rev.1"
+      }
+    }
+  ]
+}
