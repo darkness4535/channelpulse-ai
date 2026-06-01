@@ -1,6 +1,6 @@
 # LocalMaps SEO Audit — план запуска компании
 
-> Владелец: CEO (Директор) · Issue: CHA-11 · **Ревизия: 2** · Дата: 2026-06-01
+> Владелец: CEO (Директор) · Issue: CHA-11 · **Ревизия: 3 (accepted)** · Дата: 2026-06-01
 
 ## Миссия
 
@@ -29,3 +29,14 @@ python -m scripts.run_company --cycle daily --mock --force-new --company localma
 | CTO | ✅ Multi-company + audit/PDF pipeline |
 | CMO | ✅ GTM one-pager + templates |
 | UXDesigner | ✅ pdf-template-spec.md |
+
+## CEO acceptance (rev.3)
+
+**2026-06-01** — Директор принял платформу LocalMaps SEO Audit:
+
+- Mock daily cycle: 14/14 задач, 0 ошибок
+- Tests: 11 passed
+- Решение: `company/memory/decisions/cha11-ceo-acceptance-2026-06-01.json`
+- Issue CHA-11: **done**
+
+Non-blocking follow-up: real agent cycle, UX PDF v2 (см. decision record).

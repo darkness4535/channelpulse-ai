@@ -1,0 +1,29 @@
+{
+  "id": "cha11-ceo-acceptance-2026-06-01",
+  "issue": "CHA-11",
+  "date": "2026-06-01",
+  "decision": "accept_localmaps_platform",
+  "actor": "CEO",
+  "summary": "LocalMaps SEO Audit готова к операционному циклу (mock). Все критерии приёмки PLAN rev.2 выполнены.",
+  "evidence": {
+    "branch": "cursor/localmaps-seo-platform-1002",
+    "mock_cycle": "14/14 tasks, 0 errors",
+    "tests": "11 passed",
+    "cli": "python3 -m scripts.run_company --cycle daily --mock --company localmaps-seo-audit --force-new"
+  },
+  "acceptance_criteria": {
+    "config_and_roles": true,
+    "orchestrator_multi_company": true,
+    "pdf_audit_example": true,
+    "leads_audit_outreach_workflow": true,
+    "compliance_eu_us": true,
+    "gtm_one_pager_and_templates": true,
+    "human_approval_gates": true
+  },
+  "follow_up_non_blocking": [
+    "Real agent cycle with CURSOR_API_KEY (production validation)",
+    "UX v2: HTML/CSS PDF branding and localized cover pages",
+    "Paperclip child issues when API available"
+  ],
+  "issue_disposition": "done"
+}

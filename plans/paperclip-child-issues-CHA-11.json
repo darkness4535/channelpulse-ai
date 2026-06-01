@@ -1,0 +1,30 @@
+{
+  "parentIssue": "CHA-11",
+  "planRevision": 3,
+  "status": "accepted",
+  "updatedAt": "2026-06-01T16:30:00Z",
+  "note": "Child issues не создавались через API (Paperclip недоступен). Работа выполнена CTO branch cursor/localmaps-seo-platform-1002; CEO принял 2026-06-01.",
+  "children": [
+    {
+      "identifier": "CHA-11-CTO",
+      "title": "LocalMaps: техническая платформа и daily cycle",
+      "assignee": "CTO",
+      "status": "done",
+      "evidence": "companies/localmaps-seo-audit/, company/audit.py, 11 tests passed"
+    },
+    {
+      "identifier": "CHA-11-CMO",
+      "title": "LocalMaps: GTM EU/US и шаблоны outreach",
+      "assignee": "CMO",
+      "status": "done",
+      "evidence": "memory/marketing/gtm-one-pager.md, outreach/templates/"
+    },
+    {
+      "identifier": "CHA-11-UX",
+      "title": "LocalMaps: дизайн PDF мини-аудита",
+      "assignee": "UXDesigner",
+      "status": "done",
+      "evidence": "docs/pdf-template-spec.md, memory/audits/*.pdf"
+    }
+  ]
+}
