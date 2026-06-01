@@ -1,0 +1,44 @@
+{
+  "parentIssue": "CHA-11",
+  "parentId": "use PAPERCLIP_TASK_ID when API available",
+  "planRevision": 2,
+  "createdAt": "2026-06-01T16:00:00Z",
+  "note": "Создать через POST /api/issues с parentId текущей задачи",
+  "children": [
+    {
+      "identifier": "CHA-11-CTO",
+      "title": "LocalMaps: техническая платформа и daily cycle",
+      "assignee": "CTO",
+      "priority": "high",
+      "description": "Подключить companies/localmaps-seo-audit к оркестратору. Реализовать daily plan: Maps lead research → audit JSON → PDF generator stub → outreach drafts. CLI: python -m scripts.run_company --cycle daily --mock --company localmaps-seo-audit. Тесты и README. Не ломать ChannelPulse config.",
+      "acceptanceCriteria": [
+        "run_company --company localmaps-seo-audit --mock завершается без ошибок",
+        "Структура memory/ создана и заполняется mock-данными за один цикл",
+        "Документирован lawful lead research (без нарушения Maps ToS)"
+      ]
+    },
+    {
+      "identifier": "CHA-11-CMO",
+      "title": "LocalMaps: GTM EU/US и шаблоны outreach",
+      "assignee": "CMO",
+      "priority": "high",
+      "description": "One-pager позиционирования, 3 оффера (mini/full/monthly), tone of voice EN. Шаблоны первого касания: email, Telegram, WhatsApp — с упоминанием персонального PDF. 3 маркетинговые гипотезы с UTM. Compliance: GDPR + CAN-SPAM opt-out.",
+      "acceptanceCriteria": [
+        "GTM one-pager в companies/localmaps-seo-audit/memory/marketing/",
+        "3 гипотезы в hypotheses_{date}.json",
+        "3 шаблона outreach в memory/outreach/templates/"
+      ]
+    },
+    {
+      "identifier": "CHA-11-UX",
+      "title": "LocalMaps: дизайн PDF мини-аудита",
+      "assignee": "UXDesigner",
+      "priority": "medium",
+      "description": "Макет PDF: обложка, score 0-100, 3 quick wins, CTA на full audit. Бренд LocalMaps SEO Audit. Спека для CTO (HTML/CSS или markdown pipeline).",
+      "acceptanceCriteria": [
+        "Спека макета в companies/localmaps-seo-audit/docs/pdf-template-spec.md",
+        "Пример demo PDF для вымышленного лида coffee shop EU"
+      ]
+    }
+  ]
+}

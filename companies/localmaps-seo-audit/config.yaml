@@ -1,0 +1,96 @@
+company:
+  name: LocalMaps SEO Audit
+  tagline: "Ваш бизнес на карте — видимость, которую можно измерить"
+  locale: en-US
+  timezone: UTC
+
+niche:
+  id: google_maps_local_seo
+  description: >
+    SEO-аудит и улучшение видимости локального бизнеса в Google Maps / GBP
+    для Европы и США. Холодный outreach с персональным PDF-отчётом.
+
+ideal_customer:
+  regions:
+    - EU
+    - US
+  signals:
+    - "Есть Google Business Profile, слабое наполнение или низкий рейтинг"
+    - "Мало отзывов или нерегулярные ответы владельца"
+    - "Конкуренты выше в Local Pack при сопоставимой нише"
+    - "Нет UTM/сайта/соцсетей в профиле или битые ссылки"
+  segments:
+    - local_food
+    - beauty_wellness
+    - medical_dental
+    - home_services
+    - automotive
+    - retail_local
+
+services:
+  - id: mini_audit_pdf
+    name: Бесплатный мини-аудит (PDF)
+    deliverables:
+      - "Чеклист GBP (15 пунктов)"
+      - "Score видимости 0–100"
+      - "3 quick wins"
+    price_usd: 0
+    cycle_days: 3
+  - id: full_audit
+    name: Полный аудит + roadmap
+    deliverables:
+      - "Детальный GBP + local SEO аудит"
+      - "Roadmap на 90 дней"
+      - "Сравнение с 3 конкурентами в Local Pack"
+    price_usd: 299
+    cycle_days: 7
+  - id: monthly_growth
+    name: Сопровождение Maps + local SEO
+    deliverables:
+      - "Ежемесячный отчёт"
+      - "Рекомендации по рекламе (Google Ads / LSA)"
+      - "Обновления профиля и отзывов (playbook)"
+    price_usd: 499
+    cycle_days: 30
+
+sales:
+  outreach_channels:
+    - email
+    - telegram_dm
+    - whatsapp
+  daily_lead_target: 8
+  daily_outreach_drafts: 4
+  forbidden:
+    - "Массовый спам без персонализации и opt-out"
+    - "Гарантия #1 в Local Pack"
+    - "Сбор ПДн без правового основания (GDPR/CAN-SPAM)"
+    - "Скрейпинг Google Maps в нарушение ToS"
+
+autonomous:
+  auto_hire: true
+  parallel_workers: 6
+
+hiring:
+  role_pitches:
+    lead_researcher: "Ищет компании в Google Maps по ICP EU/US, сохраняет в memory/leads/"
+    head_of_sales: "Квалифицирует лидов, привязывает PDF-аудит, пишет персональные черновики"
+    compliance: "Проверяет outreach на GDPR/CAN-SPAM и запреты из config"
+    account_manager: "Ведёт сделки после ответа лида"
+    analyst: "Сводит метрики воронки audit→reply→paid"
+    marketer: "GTM-гипотезы и креативы для EU/US"
+    director: "Планирует цикл и итоговый отчёт"
+
+operations:
+  human_approval_required:
+    - send_outreach
+    - launch_paid_ads
+    - sign_contract
+    - hire_staff
+  memory_dirs:
+    leads: companies/localmaps-seo-audit/memory/leads
+    audits: companies/localmaps-seo-audit/memory/audits
+    outreach: companies/localmaps-seo-audit/memory/outreach
+    decisions: companies/localmaps-seo-audit/memory/decisions
+    reports: companies/localmaps-seo-audit/memory/reports
+    staff: companies/localmaps-seo-audit/memory/staff
+    marketing: companies/localmaps-seo-audit/memory/marketing

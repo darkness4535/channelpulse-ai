@@ -3,32 +3,32 @@
   "issue": "CHA-11",
   "decisions": [
     {
-      "id": "bootstrap-mission",
-      "summary": "Утверждена миссия ChannelPulse AI: Telegram SMM для SMB",
-      "rationale": "Зафиксировано в config.yaml и PLAN.md rev.1",
+      "id": "plan-revision-2",
+      "summary": "PLAN.md rev.2: LocalMaps SEO Audit (Google Maps EU/US), не ChannelPulse",
+      "rationale": "Цель CHA-11 — новая компания SEO-аудита с PDF outreach; rev.1 ошибочно описывал Telegram SMM",
       "owner": "director"
     },
     {
-      "id": "bootstrap-team",
-      "summary": "Операционный штат дополнен ролью Analyst",
-      "rationale": "Analyst отсутствовал в hired.json; нужен для weekly synthesis",
+      "id": "company-config-scaffold",
+      "summary": "Создан scaffold companies/localmaps-seo-audit/config.yaml",
+      "rationale": "Отдельная компания без изменения ChannelPulse до решения board",
       "owner": "director"
     },
     {
-      "id": "bootstrap-delegation",
-      "summary": "Bootstrap делегирован: CTO (техника), CMO (GTM), Director (ритм)",
-      "rationale": "CEO не выполняет IC-работу; acceptance criteria в PLAN.md",
+      "id": "bootstrap-delegation-v2",
+      "summary": "Делегирование: CTO (платформа), CMO (GTM EU/US), UXDesigner (PDF)",
+      "rationale": "CEO не выполняет IC; спецификации в PLAN.md и plans/paperclip-child-issues-CHA-11.json",
       "owner": "director"
     },
     {
       "id": "paperclip-api-blocked",
       "summary": "Child issues в Paperclip отложены — API недоступен в cloud",
-      "rationale": "127.0.0.1:3100 connection refused; делегирование задокументировано в PLAN.md",
+      "rationale": "127.0.0.1:3100 connection refused",
       "owner": "director",
       "blocker": {
         "type": "infrastructure",
         "unblock_owner": "board",
-        "unblock_action": "Обеспечить доступность Paperclip API для cloud-агентов"
+        "unblock_action": "Обеспечить доступность Paperclip API для cloud-агентов или создать child issues вручную из plans/paperclip-child-issues-CHA-11.json"
       }
     }
   ]
