@@ -1,4 +1,4 @@
-## CHA-7 — heartbeat CEO (handoff)
+## CHA-7 — heartbeat CEO
 
 **Диспозиция:** `in_review` — ожидается утверждение плана board.
 
