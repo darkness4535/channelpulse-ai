@@ -10,8 +10,8 @@
     },
     {
       "id": "cto-run-failure-triage",
-      "summary": "Провал CTO-run (default branch) — ошибка маршрутизации, не блокер стратегии",
-      "rationale": "Стратегия Q2 — зона CEO; cursor_cloud adapter упал из-за detached HEAD. Репозиторий переведён на main; fix делегирован CTO в CHA-7-CTO",
+      "summary": "Провалы CTO-run на CHA-7 — ошибка маршрутизации, не блокер стратегии",
+      "rationale": "Стратегия Q2 — зона CEO. Run 1: detached HEAD. Run 2 (1dbc0632): лимит Cloud Agents (Ultra). CHA-7 не переназначать CTO до approval; infra fix — только в child issue CHA-7-CTO",
       "owner": "director"
     },
     {
@@ -40,8 +40,19 @@
     {
       "id": "cha7-in-review-2026-06-01",
       "summary": "CHA-7 переведён в in_review: стратегия rev.1 готова, ждём board approval",
-      "rationale": "Критерии 1–2 выполнены; критерии 3–5 заблокированы до confirmation и API. PR cursor/cha7-q2-strategy-ffe5.",
+      "rationale": "Критерии 1–2 выполнены; критерии 3–5 заблокированы до confirmation и API. PR cursor/cha7-q2-strategy-1a24.",
       "owner": "director"
+    },
+    {
+      "id": "cloud-agents-limit-triage",
+      "summary": "Лимит Cloud Agents — не блокер CHA-7; блокер параллельного делегирования до approval",
+      "rationale": "Run 1dbc0632: validation_error Upgrade to Ultra. CEO не retry CTO на CHA-7; после approval child issues создавать последовательно или после upgrade плана board",
+      "owner": "director",
+      "blocker": {
+        "type": "billing",
+        "unblock_owner": "board",
+        "unblock_action": "Upgrade Cursor Ultra или создать child issues вручную и запускать агентов по одному"
+      }
     }
   ]
 }
