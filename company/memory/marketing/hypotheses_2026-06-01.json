@@ -1,0 +1,11 @@
+{
+  "date": "2026-06-01",
+  "hypotheses": [
+    {
+      "channel": "telegram_ads",
+      "offer": "starter",
+      "utm": "cp_tg_starter_may",
+      "note": "Тест на локальный food"
+    }
+  ]
+}

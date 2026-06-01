@@ -1,0 +1,23 @@
+{
+  "date": "2026-06-01",
+  "decisions": [
+    {
+      "id": "daily-cycle-mock",
+      "summary": "Запущен дневной цикл 2026-06-01 в mock-режиме после сбоя partial-run",
+      "rationale": "Paperclip API и CURSOR_API_KEY недоступны; orchestrator --force-new восстановил консистентность зависимостей",
+      "owner": "director"
+    },
+    {
+      "id": "outreach-hold",
+      "summary": "Approved outreach не отправлять без явного approval board",
+      "rationale": "operations.human_approval_required включает send_outreach",
+      "owner": "director"
+    },
+    {
+      "id": "priority-lead",
+      "summary": "Приоритет outreach: Кофейня «Зерно» (starter)",
+      "rationale": "Наивысший score (8), уже есть TG-канал с низкой активностью",
+      "owner": "director"
+    }
+  ]
+}
