@@ -6,9 +6,12 @@
   "actor": "CEO",
   "summary": "LocalMaps SEO Audit готова к операционному циклу (mock). Все критерии приёмки PLAN rev.2 выполнены.",
   "evidence": {
-    "branch": "cursor/localmaps-seo-platform-1002",
-    "mock_cycle": "14/14 tasks, 0 errors",
+    "branch": "cursor/ceo-heartbeat-cha11-c485",
+    "base_branch": "cursor/cha11-ceo-review-685f",
+    "mock_cycle": "21/21 tasks, 0 errors",
     "tests": "11 passed",
+    "verified_at": "2026-06-01T16:00:00Z",
+    "verified_by": "CEO heartbeat (cloud)",
     "cli": "python3 -m scripts.run_company --cycle daily --mock --company localmaps-seo-audit --force-new"
   },
   "acceptance_criteria": {

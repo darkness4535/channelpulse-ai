@@ -34,7 +34,7 @@ python -m scripts.run_company --cycle daily --mock --force-new --company localma
 
 **2026-06-01** — Директор принял платформу LocalMaps SEO Audit:
 
-- Mock daily cycle: 14/14 задач, 0 ошибок
+- Mock daily cycle: 21/21 задач, 0 ошибок (верифицировано CEO heartbeat 2026-06-01)
 - Tests: 11 passed
 - Решение: `company/memory/decisions/cha11-ceo-acceptance-2026-06-01.json`
 - Issue CHA-11: **done**
