@@ -1,0 +1,35 @@
+{
+  "date": "2026-06-01",
+  "issue": "CHA-11",
+  "decisions": [
+    {
+      "id": "bootstrap-mission",
+      "summary": "Утверждена миссия ChannelPulse AI: Telegram SMM для SMB",
+      "rationale": "Зафиксировано в config.yaml и PLAN.md rev.1",
+      "owner": "director"
+    },
+    {
+      "id": "bootstrap-team",
+      "summary": "Операционный штат дополнен ролью Analyst",
+      "rationale": "Analyst отсутствовал в hired.json; нужен для weekly synthesis",
+      "owner": "director"
+    },
+    {
+      "id": "bootstrap-delegation",
+      "summary": "Bootstrap делегирован: CTO (техника), CMO (GTM), Director (ритм)",
+      "rationale": "CEO не выполняет IC-работу; acceptance criteria в PLAN.md",
+      "owner": "director"
+    },
+    {
+      "id": "paperclip-api-blocked",
+      "summary": "Child issues в Paperclip отложены — API недоступен в cloud",
+      "rationale": "127.0.0.1:3100 connection refused; делегирование задокументировано в PLAN.md",
+      "owner": "director",
+      "blocker": {
+        "type": "infrastructure",
+        "unblock_owner": "board",
+        "unblock_action": "Обеспечить доступность Paperclip API для cloud-агентов"
+      }
+    }
+  ]
+}
