@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-01",
+  "issue": "CHA-7",
+  "decisions": [
+    {
+      "id": "D003",
+      "decision": "North Star Q2: повторяемая воронка выручки (лиды → outreach → pilot → retention)",
+      "owner": "director"
+    },
+    {
+      "id": "D004",
+      "decision": "Июньский фокус ICP: local_food + beauty_wellness; без новых сегментов до M2",
+      "owner": "director"
+    },
+    {
+      "id": "D005",
+      "decision": "Пакет по умолчанию для outreach — growth (45k), не starter",
+      "owner": "director"
+    },
+    {
+      "id": "D006",
+      "decision": "30-дневный план разбит на 4 недели (M1–M4); делегирование через child issues CMO/CTO/UXDesigner",
+      "owner": "director"
+    }
+  ],
+  "milestones": ["M1.1", "M1.2", "M1.3", "M1.4", "M1.5", "M2.1", "M2.2", "M2.3", "M2.4", "M3.1", "M3.2", "M3.3", "M3.4", "M4.1", "M4.2", "M4.3", "M4.4"],
+  "plan_document": "Q2-STRATEGY-2026.md"
+}
