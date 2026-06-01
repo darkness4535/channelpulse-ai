@@ -1,0 +1,225 @@
+{
+  "date": "2026-06-01",
+  "researcher": "lead_researcher",
+  "issue": "CHA-8",
+  "icp_document": "company/memory/leads/icp_profile_2026-06-01.md",
+  "methodology": "Публичный анализ Telegram-каналов, сайтов и карточек в геосервисах. Только открытые данные.",
+  "leads": [
+    {
+      "id": "lead_001",
+      "name": "Пекарня Uncle Baker",
+      "segment": "local_food",
+      "city": "Москва",
+      "tg_url": "https://t.me/UncleBakerRu",
+      "pain_hypothesis": "Канал с 11 подписчиками при B2B-поставках в кафе; нет контент-стратегии для привлечения розничных клиентов",
+      "score": 9,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_002",
+      "name": "YESBakery",
+      "segment": "local_food",
+      "city": "Москва",
+      "tg_url": "https://t.me/yesbakery",
+      "pain_hypothesis": "81 подписчик при офлайн-точке на Мельникова; Instagram-уровень контента в TG отсутствует",
+      "score": 8,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_003",
+      "name": "Пекарня Ногбон",
+      "segment": "local_food",
+      "city": "Москва",
+      "tg_url": "https://t.me/NOGBON",
+      "pain_hypothesis": "Telegram используется как контакт, а не как канал; доставка пирогов без контент-маркетинга",
+      "score": 9,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_004",
+      "name": "DO.BRO coffee Гурьевская",
+      "segment": "local_food",
+      "city": "Новосибирск",
+      "tg_url": "https://t.me/do_bro_coffee_guryevskaya",
+      "pain_hypothesis": "221 подписчик; specialty-кофейня с мастер-классами, но TG не раскрывает экспертизу и события",
+      "score": 8,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_005",
+      "name": "REEF Coffee",
+      "segment": "local_food",
+      "city": "Москва",
+      "tg_url": "https://t.me/ReeFcoffee",
+      "pain_hypothesis": "521 подписчик; нишевый бренд (серф/сноуборд), но канал без регулярного контент-плана",
+      "score": 7,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_006",
+      "name": "Бьютирум 47",
+      "segment": "beauty_wellness",
+      "city": "Санкт-Петербург",
+      "tg_url": "https://t.me/br47br17",
+      "pain_hypothesis": "Яндекс Карты отмечают «давно не обновлялось»; VK активнее TG",
+      "score": 9,
+      "source": "yandex_maps_crosslink"
+    },
+    {
+      "id": "lead_007",
+      "name": "Yoga108 Studio",
+      "segment": "beauty_wellness",
+      "city": "Москва",
+      "tg_url": "https://t.me/yoga108studio",
+      "pain_hypothesis": "310 подписчиков при 1500+ учеников за 14 лет; TG не используется для прогрева и удержания",
+      "score": 7,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_008",
+      "name": "Ananda Yoga Moscow",
+      "segment": "beauty_wellness",
+      "city": "Москва",
+      "tg_url": "https://t.me/yogaanandamoscow",
+      "pain_hypothesis": "294 подписчика; Instagram и WhatsApp активнее; TG без рубрик и анонсов ретритов",
+      "score": 7,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_009",
+      "name": "Салон красоты VICTORIA",
+      "segment": "beauty_wellness",
+      "city": "Санкт-Петербург",
+      "tg_url": "https://t.me/verbavesnaspb",
+      "site": "https://victoria-salon.ru/",
+      "pain_hypothesis": "6 точек в СПб; TG упоминается на сайте, но контент не системный — акции без рубрикатора",
+      "score": 8,
+      "source": "website_crosslink"
+    },
+    {
+      "id": "lead_010",
+      "name": "Студия «Акварель»",
+      "segment": "beauty_wellness",
+      "city": "Санкт-Петербург",
+      "tg_url": "https://t.me/akvarel2",
+      "pain_hypothesis": "3 филиала, онлайн-запись через Arnica; TG = прайс и акции без экспертного контента",
+      "score": 6,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_011",
+      "name": "Моя Стоматология",
+      "segment": "medical_dental",
+      "city": "Санкт-Петербург",
+      "tg_url": "https://t.me/mstomaru",
+      "site": "https://m-stoma.ru/",
+      "pain_hypothesis": "Несколько филиалов; TG = акции и врачи, но нет FAQ, кейсов и контент-воронки",
+      "score": 7,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_012",
+      "name": "Дентал-Сервис",
+      "segment": "medical_dental",
+      "city": "Нижний Новгород",
+      "tg_url": "https://t.me/dentalserviceofficial",
+      "site": "https://dentservice.ru/",
+      "pain_hypothesis": "Сеть клиник; клинические кейсы есть, но без системного контент-плана и рубрик",
+      "score": 6,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_013",
+      "name": "М23 Клиник (Химки)",
+      "segment": "medical_dental",
+      "city": "Химки",
+      "tg_url": "https://m23clinic.ru/",
+      "pain_hypothesis": "Закрытый TG для пациентов; публичный канал отсутствует — упущенный лидоген",
+      "score": 8,
+      "source": "website_analysis"
+    },
+    {
+      "id": "lead_014",
+      "name": "Стоматология «Специалист»",
+      "segment": "medical_dental",
+      "city": "Москва",
+      "tg_url": "https://t.me/specialistdent",
+      "pain_hypothesis": "4 филиала, награды Яндекс; TG = контакты и акции, мало образовательного контента",
+      "score": 6,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_015",
+      "name": "GUSSI COFFEE",
+      "segment": "local_food",
+      "city": "Екатеринбург",
+      "tg_url": "https://t.me/gussi_coffee_ekb",
+      "pain_hypothesis": "985 подписчиков; уютная кофейня, но TG не конвертирует в бронирование и лояльность",
+      "score": 7,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_016",
+      "name": "Авторская Бухгалтерия",
+      "segment": "b2b_services",
+      "city": "Красноярск",
+      "tg_url": "https://t.me/avtorprosta",
+      "site": "https://abkrsk.ru/",
+      "pain_hypothesis": "332 подписчика; экспертиза есть, но нет кейсов, FAQ и лид-магнитов в TG",
+      "score": 8,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_017",
+      "name": "Юрист Бизнеса — ФЕДЕРАЛ ПРАВО",
+      "segment": "b2b_services",
+      "city": "Россия",
+      "tg_url": "https://t.me/yuristbiznesa",
+      "pain_hypothesis": "92 подписчика при B2B-оффере; канал не раскрывает экспертизу и кейсы",
+      "score": 9,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_018",
+      "name": "ЗАКОННЫЙ БИЗНЕС (А. Литвинова)",
+      "segment": "b2b_services",
+      "city": "Россия",
+      "tg_url": "https://t.me/zakonniibiznes",
+      "pain_hypothesis": "1718 подписчиков; контент нерегулярен, нет системного контент-плана и воронки",
+      "score": 7,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_019",
+      "name": "Бизнес-юрист Шаломай Екатерина",
+      "segment": "b2b_services",
+      "city": "Россия",
+      "tg_url": "https://t.me/LawForBusiness",
+      "site": "https://agent-prava.ru/",
+      "pain_hypothesis": "406 подписчиков при экспертизе и VC.ru; TG слабо монетизирует аудиторию",
+      "score": 7,
+      "source": "telegram_public_index"
+    },
+    {
+      "id": "lead_020",
+      "name": "КЕКСЛАВ | Пекарня-кондитерская",
+      "segment": "local_food",
+      "city": "Санкт-Петербург",
+      "tg_url": "https://t.me/kekslove_bakery",
+      "pain_hypothesis": "543 подписчика; сеть кофеен + кондитерская, но TG не используется для предзаказов и событий",
+      "score": 7,
+      "source": "telegram_public_index"
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "by_segment": {
+      "local_food": 7,
+      "beauty_wellness": 5,
+      "medical_dental": 4,
+      "b2b_services": 4
+    },
+    "avg_score": 7.5,
+    "hot_leads_score_8_plus": 8
+  }
+}
